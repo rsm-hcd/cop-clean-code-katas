@@ -8,7 +8,10 @@
 
   program
   .command("begin", "Begin a new kata practice session")
+  .requiredOption("-k, --kata", "The kata to practice")
   .action(() => {
+    console.log(program.kata);
     console.log("Begin a new kata practice session");
-  })
-  .parse(Deno.args);
+  });
+
+  program.parse(Deno.args);
