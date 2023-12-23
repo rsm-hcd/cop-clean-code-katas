@@ -9,7 +9,6 @@ async function copyFolderRecursively(apiUrl: string, localFolderPath: string): P
       }
   
       const folderContents = await response.json();
-      console.log(folderContents);
       // Create the destination directory if it doesn't exist
       await Deno.mkdir(localFolderPath, { recursive: true });
   
