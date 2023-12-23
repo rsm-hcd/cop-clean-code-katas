@@ -1,5 +1,5 @@
 // install.ts
-async function install(): Promise<void> {
+async function installKataCliAlias(): Promise<void> {
     const aliasName = 'kata-cli';
     const aliasCommand = 'deno run --unstable -A https://raw.githubusercontent.com/rsm-hcd/cop-clean-code-katas/main/kata-cli/main.ts';
   
@@ -17,7 +17,7 @@ async function install(): Promise<void> {
     }
   }
 
-  async function upgrade(): Promise<void> {
+  async function installKataCliUpgradeAlias(): Promise<void> {
     const aliasName = 'kata-cli-update';
     const aliasCommand = 'deno cache --reload https://raw.githubusercontent.com/rsm-hcd/cop-clean-code-katas/main/kata-cli/main.ts';
   
@@ -34,7 +34,12 @@ async function install(): Promise<void> {
       console.error(`Error adding alias to .bashrc: ${error}`);
     }
   }
-  
-  await install();
-  await upgrade();
+
+  async function main(): Promise<void> {
+    await installKataCliAlias();
+    await installKataCliUpgradeAlias();
+  }
+
+
+await main();
   
