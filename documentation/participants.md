@@ -3,7 +3,7 @@ These instructions and documentation is for people looking to participate in pra
 
 ## Install the kata-cli
 ```
-deno run --unstable -A https://raw.githubusercontent.com/rsm-hcd/cop-clean-code-katas/main/install.ts
+deno run --unstable -A https://raw.githubusercontent.com/rsm-hcd/cop-clean-code-katas/main/kata-cli/install.ts
 ```
 
 ## Available CLI Commands
