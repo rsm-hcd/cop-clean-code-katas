@@ -6,9 +6,20 @@ async function createBashAlias(
   const aliasLine = `\nalias ${aliasName}='${aliasCommand}'\n`;
 
   try {
+    const bashrcContent = await Deno.readTextFile(bashrcPath);
+    const aliasOccurrences = (
+      bashrcContent.match(new RegExp(`alias ${aliasName}=`, "g")) || []
+    ).length;
+
+    if (aliasOccurrences > 0) {
+      console.log(`Alias '${aliasName}' already exists your .bashrc file.`);
+      return;
+    }
+
     await Deno.writeTextFile(bashrcPath, aliasLine, { append: true });
-    console.log(`Alias '${aliasName}' has been added to your .bashrc file.`);
-    console.log(`Your .bashrc file is located at '${bashrcPath}'.`);
+    console.log(
+      `Alias '${aliasName}' has been added to your .bashrc file located at '${bashrcPath}'.`
+    );
     console.log(`Restart your terminal or run 'exec bash' to apply changes.`);
   } catch (error) {
     console.error(`Error adding alias to .bashrc: ${error}`);
@@ -31,7 +42,7 @@ async function installKataCliUpgrade(): Promise<void> {
   await createBashAlias(aliasName, aliasCommand);
 }
 
-async function install(): Promise<void> {
+export async function install(): Promise<void> {
   await installKataCli();
   await installKataCliUpgrade();
 }
