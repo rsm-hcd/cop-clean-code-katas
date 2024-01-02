@@ -10,9 +10,6 @@ quickly get to the kata without having to bother with tedious setup of projects
 deno run --unstable -A https://raw.githubusercontent.com/rsm-hcd/cop-clean-code-katas/main/kata-cli/install.ts
 ```
 
-you can then run `exec bash` to refresh your bash window and gain access to the
-installed Kata CLI
-
 ## Available CLI Commands
 
 TBD

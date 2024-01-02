@@ -9,9 +9,7 @@ async function createBashAlias(
     await Deno.writeTextFile(bashrcPath, aliasLine, { append: true });
     console.log(`Alias '${aliasName}' has been added to your .bashrc file.`);
     console.log(`Your .bashrc file is located at '${bashrcPath}'.`);
-    console.log(
-      `Restart your terminal or run 'source ${bashrcPath}' to apply changes.`
-    );
+    console.log(`Restart your terminal or run 'exec bash' to apply changes.`);
   } catch (error) {
     console.error(`Error adding alias to .bashrc: ${error}`);
   }

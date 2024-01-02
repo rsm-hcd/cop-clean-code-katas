@@ -51,7 +51,6 @@ async function copyFolderFromGithub(
 export async function begin(sourceFolder: string, destinationFolder: string) {
   const repoOwner = "rsm-hcd";
   const repoName = "cop-clean-code-katas";
-  // const sourceFolder = "/kata-cli";
 
   const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents`;
 
