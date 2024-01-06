@@ -11,4 +11,3 @@ export {
   it,
 } from "https://deno.land/std@0.210.0/testing/bdd.ts";
 export { default as Denomander } from "https://deno.land/x/denomander@0.9.3/mod.ts";
-export * from "https://deno.land/x/dotenv/load.ts";
