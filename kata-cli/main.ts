@@ -11,7 +11,7 @@ const program = new Denomander({
 program
   .command(
     "begin [name]",
-    "Begin a new kata practice session by creating a new directory and the necessary files"
+    "Begin a new kata practice session by creating the necessary files inside of the directory"
   )
   .argDescription("name", "The name of the kata to practice")
   .option(
@@ -21,7 +21,11 @@ program
     "./"
   )
   .action(async () => {
-    await begin(program.name, program.directory);
+    try {
+      await begin(program.name, program.directory);
+    } catch (error) {
+      console.log(`%c${error}`, "color: red");
+    }
   });
 
 program.command("list", "List all available katas").action(async () => {

@@ -1,3 +1,5 @@
+import { listKataNames } from "./list-katas/list-kata-names/list-kata-names.ts";
+
 // copy-folder.ts
 async function copyFolderFromGithub(
   apiUrl: string,
@@ -48,11 +50,24 @@ async function copyFolderFromGithub(
   }
 }
 
-export async function begin(sourceFolder: string, destinationFolder: string) {
+function buildApiUrl(): string {
   const repoOwner = "rsm-hcd";
   const repoName = "cop-clean-code-katas";
-
   const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents`;
+  return apiUrl;
+}
 
-  await copyFolderFromGithub(apiUrl, sourceFolder, destinationFolder);
+async function verifyKataExists(kataName: string): Promise<void> {
+  const kataNames = await listKataNames();
+  if (!kataNames.includes(kataName)) {
+    throw new Error(
+      `Kata '${kataName}' not found. Try 'kata list' to find a kata to practice.`
+    );
+  }
+}
+
+export async function begin(kataName: string, destinationFolder: string) {
+  await verifyKataExists(kataName);
+  const apiUrl = buildApiUrl();
+  await copyFolderFromGithub(apiUrl, kataName, destinationFolder);
 }
