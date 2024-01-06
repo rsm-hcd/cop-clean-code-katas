@@ -5,7 +5,7 @@ import { listKataNames } from "./list-katas/list-kata-names/list-kata-names.ts";
 const program = new Denomander({
   app_name: "Kata CLI",
   app_description: "Clean Code Community Of Practice Command Line Interface",
-  app_version: "0.0.1",
+  app_version: "0.0.2",
 });
 
 program
