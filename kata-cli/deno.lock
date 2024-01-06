@@ -3,6 +3,7 @@
   "redirects": {
     "https://deno.land/std/uuid/mod.ts": "https://deno.land/std@0.210.0/uuid/mod.ts",
     "https://deno.land/x/denomander/mod.ts": "https://deno.land/x/denomander@0.9.3/mod.ts",
+    "https://deno.land/x/dotenv/load.ts": "https://deno.land/x/dotenv@v3.2.2/load.ts",
     "https://deno.land/x/exec/mod.ts": "https://deno.land/x/exec@0.0.5/mod.ts"
   },
   "remote": {
@@ -83,6 +84,9 @@
     "https://deno.land/x/denomander@0.9.3/src/utils/remove.ts": "e80f1d257f76cbcafafc855debe7274c59db319639b51aca63a63003e8cf1118",
     "https://deno.land/x/denomander@0.9.3/src/utils/set.ts": "a89fe0f27575cecd5f5fdaa6907f13a387a03c83b3ef66fd317d114f4dc0fe3e",
     "https://deno.land/x/denomander@0.9.3/src/utils/utils.ts": "fc29c3b267065685c45d24b3e597e67bee94b2b9d68b5739625051358fef541e",
+    "https://deno.land/x/dotenv@v3.2.2/load.ts": "cbd76a0aee01aad8d09222afaa1dd04b84d9d3e44637503b01bf77a91df9e041",
+    "https://deno.land/x/dotenv@v3.2.2/mod.ts": "077b48773de9205266a0b44c3c3a3c3083449ed64bb0b6cc461b95720678d38e",
+    "https://deno.land/x/dotenv@v3.2.2/util.ts": "693730877b13f8ead2b79b2aa31e2a0652862f7dc0c5f6d2f313f4d39c7b7670",
     "https://deno.land/x/exec@0.0.5/mod.ts": "2a71f7e23e25be883275b22d872bbd2c3dfa3058934f1f156c8663fb81f5894f",
     "https://raw.githubusercontent.com/rsm-hcd/cop-clean-code-katas/main/kata-cli/main.ts": "2441e600460f7ecf76026cdecac5e39dde24da9ac72910295400511cc7f400c4"
   }

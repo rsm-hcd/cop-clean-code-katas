@@ -1,5 +1,6 @@
-import { Denomander } from "./deps.ts";
 import { begin } from "./begin.ts";
+import { Denomander } from "./deps.ts";
+import { listKataNames } from "./list-katas/list-kata-names/list-kata-names.ts";
 
 const program = new Denomander({
   app_name: "Kata CLI",
@@ -20,12 +21,12 @@ program
     "./"
   )
   .action(async () => {
-    console.log(
-      program.name,
-      program.directory,
-      "Begin a new kata practice session"
-    );
     await begin(program.name, program.directory);
   });
+
+program.command("list", "List all available katas").action(async () => {
+  const kataNames = await listKataNames();
+  console.log("List all available katas", kataNames);
+});
 
 program.parse(Deno.args);
