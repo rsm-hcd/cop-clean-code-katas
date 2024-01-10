@@ -54,5 +54,6 @@ async function verifyKataExists(kataName: string): Promise<void> {
 
 export async function begin(kataName: string, destinationFolder: string) {
   await verifyKataExists(kataName);
-  await copyFolderFromGithub(kataName, destinationFolder);
+  const sourceFolder = `kata-templates/${kataName}`;
+  await copyFolderFromGithub(sourceFolder, destinationFolder);
 }
