@@ -19,6 +19,5 @@ export async function getFolderContents(
   }
 
   const folderContents = await response.json();
-  // console.log(response, folderContents);
   return folderContents as FolderContents[];
 }
