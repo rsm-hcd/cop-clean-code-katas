@@ -1,3 +1,5 @@
+import { doesFileExists } from "./directory-access/does-file-exist.ts";
+
 async function createBashAlias(
   aliasName: string,
   aliasCommand: string
@@ -6,6 +8,10 @@ async function createBashAlias(
   const aliasLine = `\nalias ${aliasName}='${aliasCommand}'\n`;
 
   try {
+    const doesBashrcFileExist = await doesFileExists(bashrcPath);
+    if (doesBashrcFileExist) {
+      throw new Error(`.bashrc file not found at '${bashrcPath}'.`);
+    }
     const bashrcContent = await Deno.readTextFile(bashrcPath);
     const aliasOccurrences = (
       bashrcContent.match(new RegExp(`alias ${aliasName}=`, "g")) || []

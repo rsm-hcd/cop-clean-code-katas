@@ -40,7 +40,7 @@ async function copyFolderFromGithub(
   }
 }
 
-async function errorIfKataDoesntExist(kataName: string): Promise<void> {
+async function errorIfKataDoesNotExist(kataName: string): Promise<void> {
   const kataNames = await listKataNames();
   if (!kataNames.includes(kataName)) {
     throw new Error(
@@ -50,7 +50,7 @@ async function errorIfKataDoesntExist(kataName: string): Promise<void> {
 }
 
 export async function begin(kataName: string, destinationFolder: string) {
-  await errorIfKataDoesntExist(kataName);
+  await errorIfKataDoesNotExist(kataName);
   const sourceFolder = `kata-templates/${kataName}`;
   await copyFolderFromGithub(sourceFolder, destinationFolder);
 }
