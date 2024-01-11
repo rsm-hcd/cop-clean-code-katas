@@ -1,4 +1,4 @@
-import { exists } from "https://deno.land/std/fs/mod.ts";
+import { exists } from "../deps.ts";
 
 export async function doesFileExists(filePath: string): Promise<boolean> {
   try {
