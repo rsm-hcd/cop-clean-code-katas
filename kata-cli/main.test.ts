@@ -1,6 +1,5 @@
-import { describe, it, assert, beforeAll, beforeEach } from "./deps.ts";
-import { install } from "./install.ts";
-import { exec } from "https://deno.land/x/exec/mod.ts";
+import { exec } from "https://deno.land/x/exec@0.0.5/mod.ts";
+import { beforeAll, describe, it } from "./deps.ts";
 
 describe("given kata CLI is installed", () => {
   //   beforeAll(async () => {
@@ -32,7 +31,7 @@ describe("given kata CLI is installed", () => {
     describe("anagrams", () => {
       beforeAll(async () => {
         const response = await exec(
-          "deno run --unstable -A main.ts begin anagrams -d ./test-folder"
+          "deno run --unstable -A main.ts begin anagrams -d ./test-folder",
         );
         console.log(response);
         if (!response.status.success) {
@@ -63,6 +62,12 @@ describe("given kata CLI is installed", () => {
       //     const fileExists = await Deno.stat("./test/words.txt");
       //     assert(fileExists);
       //   });
+    });
+  });
+
+  describe("when a user updates the kata cli", () => {
+    it("should update the kata cli", async () => {
+      // TODO(@myty): figure out how to test this
     });
   });
 });
