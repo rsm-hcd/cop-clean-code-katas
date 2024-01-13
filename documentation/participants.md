@@ -22,8 +22,8 @@ with a kata much simpler for you. The below command is going to run some
 typescript code that sets up a bash alias. This way you can run the tool in any
 bash terminal
 
-```
-deno run --unstable -A https://raw.githubusercontent.com/rsm-hcd/cop-clean-code-katas/main/kata-cli/install.ts
+```sh
+deno install --unstable -A -f -n kata https://raw.githubusercontent.com/rsm-hcd/cop-clean-code-katas/main/kata-cli/main.ts
 ```
 
 ### 2. Begin your first Kata
