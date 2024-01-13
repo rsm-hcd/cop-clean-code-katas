@@ -23,14 +23,14 @@ typescript code that sets up a bash alias. This way you can run the tool in any
 bash terminal
 
 ```sh
-deno install --unstable -A -f -n kata https://raw.githubusercontent.com/rsm-hcd/cop-clean-code-katas/main/kata-cli/main.ts
+deno install --unstable -A -f -n kata-runner https://raw.githubusercontent.com/rsm-hcd/cop-clean-code-katas/main/kata-cli/main.ts
 ```
 
 ### 2. Begin your first Kata
 
 in an empty directory of your choice run the following command inside of a bash
-terminal: `kata begin hello-world`. This will populate your current directory
-with the hello-world kata
+terminal: `kata-runner begin hello-world`. This will populate your current
+directory with the hello-world kata
 
 ### 3. Setup VSCode for Deno Development (Optional)
 
@@ -48,3 +48,7 @@ this
 
 In a bash terminal use the command `kata -h` to get a listing of available
 commands
+
+## How to uninstall
+
+`deno uninstall kata-runner`
