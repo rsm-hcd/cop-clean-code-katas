@@ -19,7 +19,7 @@ or a contributor, you will need to install Deno. you can read about Deno
 
 ## Next Steps
 
-- If you are a `participant` (looking to practice a kata) then follow
-  [these](./documentation/participants.md) instructions
+- If you are a `participant` (looking to practice a kata) then install the
+  [kata-runner](https://github.com/rsm-hcd/kata-runner).
 - If you are a `contributor` (looking to add or alter Katas) then follow
   [these](./documentation/contributors.md) instructions
